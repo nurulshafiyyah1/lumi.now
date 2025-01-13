@@ -1,3 +1,45 @@
+const images = document.querySelectorAll('.portfolio-image');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeBtn = document.getElementById('closeBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+
+images.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        currentIndex = index;
+        showImage();
+        lightbox.style.display = 'flex';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+function showImage() {
+    lightboxImage.src = images[currentIndex].src;
+}
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+});
+
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+
 let slideIndex = 0;
 
 function moveSlide(step) {
@@ -76,4 +118,3 @@ document.getElementById('leftArrow').addEventListener('click', function() {
 
 document.getElementById('rightArrow').addEventListener('click', function() {
 });
-
