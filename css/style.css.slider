@@ -1,0 +1,79 @@
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Modern-Slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    color: #45489a;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    color: #7a7a7a;
+}
+
+/* Slide Items */
+.item {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-fill {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.info {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.info h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.white-button a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #45489a;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.white-button a:hover {
+    background-color: #343434;
+}
