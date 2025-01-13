@@ -13,9 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "Message:\n$message\n";
     
     $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n"; // Set the reply-to address as the sender's email
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; // Set character encoding
-
+    $headers .= "Reply-To: $email\r\n"; 
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; 
     if (mail($to, $subject, $body, $headers)) {
         echo "Message sent successfully!";
     } else {
