@@ -1,0 +1,33 @@
+let slideIndex = 0;
+
+function moveSlide(step) {
+    const slides = document.querySelectorAll(".carousel-images img");
+    slideIndex += step;
+
+    // Prevent the images from looping
+    if (slideIndex < 0) {
+        slideIndex = 0; // Keep at first image
+    } else if (slideIndex >= slides.length) {
+        slideIndex = slides.length - 1; // Keep at last image
+    }
+
+    const carousel = document.querySelector(".carousel-images");
+    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+const animateOnScroll = () => {
+    const sections = document.querySelectorAll('.section-content, .services-container, .home-content');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+    sections.forEach(section => observer.observe(section));
+};
+
+document.addEventListener('DOMContentLoaded', animateOnScroll);
