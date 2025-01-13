@@ -369,7 +369,7 @@ nav ul li a:hover::after {
 /* Responsive for mobile */
 @media (max-width: 768px) {
     .portfolio-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 items per row on smaller screens */
+        grid-template-columns: repeat(1, 1fr); /* 3 items per row on smaller screens */
     }
 
     .portfolio-item {
